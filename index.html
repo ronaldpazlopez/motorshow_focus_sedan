@@ -1,0 +1,132 @@
+<html manifest="cache.manifest">
+<head>
+	<title>
+		Motorshow Focus Sedan
+	</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	
+	<link rel="stylesheet" href="css/jquery.mobile-1.4.2.min.css" />
+	<link rel="stylesheet" href="css/estilos.css" />
+	
+	<script src="js/jquery-1.9.1.min.js"></script>
+	<script src="js/jquery.mobile-1.4.2.min.js"></script>
+	
+	<script src="js/jquery-validate/jquery.validate.min.js"></script>
+	<script src="js/jquery-validate/additional-methods.min.js"></script>
+	<script src="js/jquery-validate/messages_es.js"></script>
+</head>
+ 
+<body>
+	<div id="wc_lightbox" class="wc_lightbox">
+		<span id="close" class="close_zoom">Cerrar</span>
+		<div class="wc_lightbox_td" id="wc_lightbox_td">
+			<div class="wc-image" id="wc-image">
+				<img id="full_image" alt="" src="img/blank.gif">
+			</div>
+		</div>
+	</div>
+
+	<div data-role="page" data-theme="f" id="focus-sedan" class="page_focus">
+		<div class="inner_page">
+			<div class="inner_page_intro clearfix">
+					<div class="left_page">
+						<h2 class="title_page">AUTOS</h2>
+						<div class="bg_photo">
+							<h3 class="subtitle_page">FORD <span>Focus sedan</span></h3>
+							<a href="img/m-car-focus-sedan.jpg" class="lightbox"><img src="img/m-car-focus-sedan.jpg" alt=""></a>
+						</div>
+						<div class="right wc-return">
+							<a href="img/image-pdf/image-focus-sedan.jpg" class="lightbox lightbox_pdf view_more fright">ver m&aacute;s</a>
+						</div>
+					</div>
+					<div class="right_page">
+						<div class="right_page-in">
+							<ul class="ui-listview">
+								<li>
+									<h2>SYNC with My Ford Touch</h2>
+									<div class="desc">Programa que se activa a través de una pantalla touch screen de 8 pulgadas o 120,000 comandos de voz; manteniendo al conductor comunicado, entretenido y conectado de manera ininterrumpida y segura.  (Versión Titanium)</div>
+								</li>
+								<li>
+									<h2>Cámara DE Reversa</h2>
+									<div class="desc">Una cámara se activa cuando el auto está en reversa, proyectando guías de color verde, amarillo y rojo que indica al conductor si está bien direccionado o si tiene algún objeto cerca. (Versión Titanium)</div>
+								</li>
+								<li>
+									<h2>Airbags</h2>
+									<div class="desc">7 airbags que significan el máximo de seguridad para sus ocupantes.</div>
+								</li>
+								<li>
+									<h2>Passive Start</h2>
+									<div class="desc">Sistema inteligente que abre las puertas del auto y arranca sin utilizar la llave. El vehículo se pondrá en marcha si la llave se encuentra al interior. (Versión Titanium)</div>
+								</li>
+								<li>
+									<h2>Active Park Assist </h2>
+									<div class="desc">Sistema que funciona a base de sensores que miden el espacio hasta encontrar el lugar adecuado. El auto se estaciona solo utilizando estos sensores que miden el espacio. (Versión Titanium)</div>
+								</li>
+								<li>
+									<h2>Control ElEctrÓNIco de Estabilidad (ESC) </h2>
+									<div class="desc">Sistema que asegura el control del auto al conductor, utilizando sensores que detectan situaciones de riesgo, para controlarlas mediante el sistema de frenos. En situaciones extremas, disminuye la potencia del motor.</div>
+								</li>
+								<li>
+									<h2>Control de Tracción (TCS)</h2>
+									<div class="desc">Los sensores ABS aseguran la tracción del vehículo evitando que giren libremente para que el conductor no pierda el control en ningún momento. En casos de patinar, bloquea la rueda que perdió adherencia devolviéndole el control al conductor.</div>
+								</li>
+							</ul>
+						</div>
+					</div>
+			</div>
+			<div class="right wc_logo_page">
+			<h1 class="logo_page"><a href="#home"><img src="img/m-logo.png" alt="For go Further"  width="125" height="71"></a></h1>
+			</div>
+		</div>
+	</div>
+
+<script src="js/bootstrap.js"></script>
+<script src="js/model.js"></script>
+<script type="text/javascript">
+
+	// codigo para motorshow
+	function updateSizeLightbox () {
+		$('#wc_lightbox').width($(window).width());
+		$('#wc_lightbox').height($(window).height());
+	}
+	// end codigo motorshow
+
+	$(function() {
+		// codigo para motorshow
+		var src = "",
+			$wc_lightbox = $('#wc_lightbox'),
+			$full_image = $('#full_image');
+			$close = $('#close');
+
+		updateSizeLightbox();
+		$(window).resize(function() {
+			updateSizeLightbox();
+		});
+
+		$('.lightbox').click(function(e) {
+			src = $(this).attr('href');
+			$full_image.attr('src',src);
+			$wc_lightbox.addClass('open');
+			e.preventDefault();
+		});
+
+		$('.lightbox_pdf').click(function(e) {
+			$('#wc-image').addClass('h_pdf');
+			$('#wc-image').height($(window).height() - 90);
+			e.preventDefault();
+		});
+
+		$close.click(function() {
+			$wc_lightbox.removeClass('open');
+			$('#wc-image').removeClass('h_pdf');
+			$('#wc-image').css('height','auto');
+		})
+		// end codigo motorshow
+
+	});
+	
+</script>
+
+</body>
+</html>
